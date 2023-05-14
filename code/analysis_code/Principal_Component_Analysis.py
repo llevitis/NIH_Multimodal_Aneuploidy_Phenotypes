@@ -222,19 +222,19 @@ for key in scd_bcoef_effect_dict.keys():
 
 plot_pca_dataset_score_comparisons(data=scd_bcoef_PCAscores_dict,
                                    dataset_pairs=[['xxy_withTTV', 'xyy_withTTV'],['xxy_withTTV', 't21_withTTV'], ['xyy_withTTV', 't21_withTTV']], 
-                                   filepath="../../dummy_figures/allAneuploidies_pc1ScoreComparison_withTTV.png")
+                                   filepath="../../figures/allAneuploidies_pc1ScoreComparison_withTTV.png")
 
 plot_pca_dataset_score_comparisons(data=scd_bcoef_PCAscores_dict,
                                    dataset_pairs=[['xxy_withoutTTV', 'xyy_withoutTTV'],['xxy_withoutTTV', 't21_withoutTTV'], ['xyy_withoutTTV', 't21_withoutTTV']], 
-                                   filepath="../../dummy_figures/allAneuploidies_pc1ScoreComparison_withoutTTV.png")
+                                   filepath="../../figures/allAneuploidies_pc1ScoreComparison_withoutTTV.png")
 
 plot_pca_dataset_feature_comparisons(data=scd_bcoef_PCAfeatureweights_dict,
                                    dataset_pairs=[['xxy_withTTV', 'xyy_withTTV'],['xxy_withTTV', 't21_withTTV'], ['xyy_withTTV', 't21_withTTV']], 
-                                   filepath="../../dummy_figures/allAneuploidies_pc1FeatureComparison_withTTV.png")
+                                   filepath="../../figures/allAneuploidies_pc1FeatureComparison_withTTV.png")
 
 plot_pca_dataset_feature_comparisons(data=scd_bcoef_PCAfeatureweights_dict,
                                    dataset_pairs=[['xxy_withoutTTV', 'xyy_withoutTTV'],['xxy_withoutTTV', 't21_withoutTTV'], ['xyy_withoutTTV', 't21_withoutTTV']], 
-                                   filepath="../../dummy_figures/allAneuploidies_pc1FeatureComparison_withoutTTV.png")
+                                   filepath="../../figures/allAneuploidies_pc1FeatureComparison_withoutTTV.png")
 
 """
 Plot the PCA variance explained
@@ -257,7 +257,7 @@ scd_bcoef_PCAvarexplained_melted_df['Dataset'] = scd_bcoef_PCAvarexplained_melte
 
 for ttv_stat in ['withTTV', 'withoutTTV']:
     plot_PCA_varExplained(data=scd_bcoef_PCAvarexplained_melted_df[scd_bcoef_PCAvarexplained_melted_df['TTV_Status']==ttv_stat], 
-                          filepath=f"../../dummy_figures/pca_bcoef_{ttv_stat}.png")
+                          filepath=f"../../figures/pca_bcoef_{ttv_stat}.png")
 
 """
 Supplemental plots for correlation across all PC1 scores and features
@@ -304,16 +304,16 @@ scd_pc_scores_1to5_withWithoutTTV_df = pd.concat([scd_pc_scores_1to5_withTTV_df,
 
 plot_corrMatrix_PCA(scd_pc_features_1to5_withTTV_df, 
                     title="PC Features (With TTV)", 
-                    filepath="../../dummy_figures/allAneuploidies_PC1-5_features_corrMatrix_withTTV.png")
+                    filepath="../../figures/allAneuploidies_PC1-5_features_corrMatrix_withTTV.png")
 plot_corrMatrix_PCA(scd_pc_scores_1to5_withTTV_df, 
                     title="PC Scores (Without TTV)", 
-                    filepath="../../dummy_figures/allAneuploidies_PC1-5_scores_corrMatrix_withTTV.png")
+                    filepath="../../figures/allAneuploidies_PC1-5_scores_corrMatrix_withTTV.png")
 plot_corrMatrix_PCA(scd_pc_features_1to5_withWithoutTTV_df, 
                     title="PC Features (With vs Without TTV)", 
-                    filepath="../../dummy_figures/allAneuploidies_PC1-5_features_corrMatrix_withWithoutTTV.png")
+                    filepath="../../figures/allAneuploidies_PC1-5_features_corrMatrix_withWithoutTTV.png")
 plot_corrMatrix_PCA(scd_pc_scores_1to5_withWithoutTTV_df, 
                     title="PC Scores (With vs Without TTV)", 
-                    filepath="../../dummy_figures/allAneuploidies_PC1-5_scores_corrMatrix_withWithoutTTV.png")
+                    filepath="../../figures/allAneuploidies_PC1-5_scores_corrMatrix_withWithoutTTV.png")
 
 """
 Annotation using the Yeo-Krienen-17 and the Von Economo-Koskinas atlases
@@ -413,7 +413,7 @@ for ttv_stat in ['withTTV', 'withoutTTV']:
                        annotations=['Yeo17', 'vE'], 
                        ylabels=['XXY PC1', 'XYY PC1', 'T21 PC1', 'Avg PC1'], 
                        spins=spins,
-                       filepath=f'../../dummy_figures/supp_anova_annot_{ttv_stat}_yeo17-vE')
+                       filepath=f'../../figures/supp_anova_annot_{ttv_stat}_yeo17-vE')
 
 # Create the dataframes storing information about PC1 enrichment across the annotations 
 partitions_specificity_bcoef_dict = {} 
@@ -462,11 +462,11 @@ for ttv_stat in ['withTTV', 'withoutTTV']:
                                   diff_colorbars=vE_paired_pal_dict,
                                   xticklabels=vE_ORDER, 
                                   disorders=['xxy','xyy','t21', 'avgPC1'], 
-                                  fname=f'../../dummy_figures/cross_disorder_vE_partitions_sig_{ttv_stat}.png')
+                                  fname=f'../../figures/cross_disorder_vE_partitions_sig_{ttv_stat}.png')
     utils.make_barplot_horizontal(data=partitions_specificity_bcoef_dict[f'Yeo17_{ttv_stat}'], 
                                   netorder=list(partitions_specificity_bcoef_dict[f'Yeo17_{ttv_stat}'].query("disorder == 'avgPC1'").sort_values(by='zscore')['network']), 
                                   diff_colorbars=yeo17_paired_pal_dict,
                                   xticklabels=YEO17_ORDER, 
                                   disorders=['xxy','xyy','t21', 'avgPC1'], 
                                   figsize=((3.125) * 4, 4),
-                                  fname=f'../../dummy_figures/cross_disorder_yeo17_partitions_sig_{ttv_stat}.png')
+                                  fname=f'../../figures/cross_disorder_yeo17_partitions_sig_{ttv_stat}.png')

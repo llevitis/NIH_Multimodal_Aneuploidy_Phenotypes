@@ -65,9 +65,9 @@ opts = dict(
     views=['lat', 'med'], colormap='RdBu_r', vmin=vmin, vmax=vmax
 )
 
-for key in ['xxy_withTBV', 'xyy_withTBV', 'ds_withTBV']:
+for key in ['xxy_withTTV', 'xyy_withTTV', 'ds_withTTV']:
     aneuploidy = key.split("_")[0]
-    tbv_status = key.split("_")[1]
+    ttv_status = key.split("_")[1]
     curr_df = scd_bcoef_effect_dict[key]
     for idp in t1w_dti_func_features: 
         curr_data = []
@@ -83,6 +83,6 @@ for key in ['xxy_withTBV', 'xyy_withTBV', 'ds_withTBV']:
                                colorbar=False,
                                **opts)
         if bcoef==False:
-            brain.save_image(f'../../figures/brainplots/hcp_{aneuploidy}_{idp}_{tbv_status}_tval.png')
+            brain.save_image(f'../../figures/brainplots/hcp_{aneuploidy}_{idp}_{ttv_status}_tval.png')
         else:
-            brain.save_image(f'../../figures/brainplots/hcp_{aneuploidy}_{idp}_{tbv_status}_bcoef.png')
+            brain.save_image(f'../../figures/brainplots/hcp_{aneuploidy}_{idp}_{ttv_status}_bcoef.png')

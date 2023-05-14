@@ -287,21 +287,21 @@ plot_hierarchCluster_spin(data=xxy_xyy_t21_withoutTTV_bcoef_joint_df,
                            disorder_color_pal=dataset_phenotype_color_disorder_dict,
                            modality_color_pal=dataset_phenotype_color_modality_dict, 
                            disorder_phenotype_color_dict=disorder_phenotype_color_dict,
-                           filepath='../../dummy_figures/xxy_xyy_t21_hierarchClust_withoutTTV_bcoef_spin-vasa.png')
+                           filepath='../../figures/xxy_xyy_t21_hierarchClust_withoutTTV_bcoef_spin-vasa.png')
 
 plot_hierarchCluster_spin(data=xxy_xyy_t21_withTTV_bcoef_joint_df, 
                            pvals= pvals_withTTV_bcoef_spin, 
                            disorder_color_pal=dataset_phenotype_color_disorder_dict,
                            modality_color_pal=dataset_phenotype_color_modality_dict, 
                            disorder_phenotype_color_dict=disorder_phenotype_color_dict,
-                           filepath='../../dummy_figures/xxy_xyy_t21_hierarchClust_withTTV_bcoef_spin-vasa.png')
+                           filepath='../../figures/xxy_xyy_t21_hierarchClust_withTTV_bcoef_spin-vasa.png')
 
 plot_hierarchClust_edgeGraph(data=xxy_xyy_t21_withTTV_bcoef_joint_df, 
                              spins=pvals_withTTV_bcoef_spin_df, 
                              palette=paired_pal, 
-                             filepath='../../dummy_figures/xxy_xyy_t21_hierarchClust_withTTV_edgeGraph.png')
+                             filepath='../../figures/xxy_xyy_t21_hierarchClust_withTTV_edgeGraph.png')
 
 plot_hierarchClust_edgeGraph(data=xxy_xyy_t21_withoutTTV_bcoef_joint_df, 
                              spins=pvals_withoutTTV_bcoef_spin_df, 
                              palette=paired_pal, 
-                             filepath='../../dummy_figures/xxy_xyy_t21_hierarchClust_withoutTTV_edgeGraph.png')
+                             filepath='../../figures/xxy_xyy_t21_hierarchClust_withoutTTV_edgeGraph.png')

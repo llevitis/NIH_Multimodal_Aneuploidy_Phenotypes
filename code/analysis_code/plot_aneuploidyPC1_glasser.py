@@ -22,7 +22,7 @@ import utils
 from netneurotools.plotting import plot_fsaverage
 from pathlib import Path
 
-scd_bcoef_withTBV_allDisorders_full = pd.read_csv("../../data/scd_bcoef_allDisorders_subsAllMods_df.csv", index_col=0)
+scd_bcoef_withTTV_allDisorders_full = pd.read_csv("../../data/scd_bcoef_allDisorders_subsAllMods_df.csv", index_col=0)
 
 with open('../../data/hcp_rois.txt', 'r') as f: 
     hcp_rois_orig = f.read().split("\n")[:-1]
@@ -42,7 +42,7 @@ opts = dict(
 )
 
 #scd_bcoef_withTBV_allDisorders_df = pd.read_csv("../../data/scd_bcoef_withTBV_allDisorders_df.csv", index_col=0)
-func_rois_to_use = scd_bcoef_withTBV_allDisorders_full.index
+func_rois_to_use = scd_bcoef_withTTV_allDisorders_full.index
 
 
 hcp_lh_annot = '/Users/levitise2/code/NIH_Multimodal_SCA_Phenotypes/data/lh.HCPMMP1.annot'
@@ -67,7 +67,7 @@ for dataset in ['xxy', 'xyy', 't21']:
     curr_data = []
     for i, roi in enumerate(hcp_rois):
         if roi in func_rois_to_use: 
-            curr_data.append(scd_bcoef_withTBV_allDisorders_full.loc[roi, dataset])
+            curr_data.append(scd_bcoef_withTTV_allDisorders_full.loc[roi, dataset])
         else: 
             curr_data.append(np.nan)
     brain = plot_fsaverage(curr_data,
