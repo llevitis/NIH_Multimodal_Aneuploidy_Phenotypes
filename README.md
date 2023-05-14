@@ -9,3 +9,18 @@ Each of the following scripts loads subject by brain region matrices for all the
 *  `code/analysis_code/XXY_compute_deltaIDP_maps.py`
 * `code/analysis_code/XYY_compute_deltaIDP_maps.py`
 * `code/analysis_code/T21_compute_deltaIDP_maps.py`
+
+Together with the plotting functionality in `code/scripts/plot_aneuploidy_idp_effect_size_maps.py`, these scripts generate the brain maps seen in **Figure 2a**. 
+
+#### Defining organizing-principles of cortical change across IDPs, regions and aneuploidies  
+
+The followings script aggregates the aneuploidy-specific brain region by IDP matrices to evaluate how the brain maps relate across phenotypes and aneuploidies. The hierarchical clustering plot and force-directed edge graph (**Fig 2b, c**) are generated using this script. 
+
+* `code/analysis_code/Hierarchical_Clustering.py`
+
+
+#### Defining and characterizing principal components of multimodal cortical change in each aneuploidy
+
+The following script performs principal component analysis (PCA) on each of the aneuploidy-specific brain region by delta IDP matrices. It compares the feature loadings and principal component scores for the first principal component of each aforementioned matrix (**Fig 3**). Additionally, this script averages the PC1 maps across the aneuploidies to enable identification of a shared spatial axis of multimodal change (**Fig 4a**). Finally, this script contains code to carry out biological annotation of the PC1 maps using a previously defined annotation (**Fig 4c**)
+
+* `/code/analysis_code/Principal_Component_Analysis.py` 
