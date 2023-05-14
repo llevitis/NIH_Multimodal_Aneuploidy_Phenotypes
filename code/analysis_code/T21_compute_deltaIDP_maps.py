@@ -6,7 +6,7 @@ import os
 import json
 import sys
 import importlib
-sys.path.insert(0, "../../code/analysis_code/")
+sys.path.insert(0, "../../code/utils/")
 import utils
 importlib.reload(utils)
 import pandas as pd
@@ -128,7 +128,7 @@ for i, idp in enumerate(mm_idp):
         idp_df = t21_dwi_hcp_data[idp].loc[subs_dwi_qc_pass,:]
     elif idp in func_idp:
         idp_df = t21_func_hcp_data[idp].loc[subs_fmri_qc_pass,:]
-    idp_df.to_csv(f"../../dummy_data/t21_{idp}.csv")
+    idp_df.to_csv(f"../../data/t21_{idp}.csv")
 
 
 """
@@ -199,5 +199,5 @@ for idp in mm_idp:
     scd_effect_withoutTTV_df.loc[func_rois_to_use, f'{idp}_FDR'] = scd_effect_idp_withoutTTV_dict[idp]['SCdose_FDR']
     scd_effect_withoutTTV_df.loc[func_rois_to_use, f'{idp}_bcoef'] = scd_effect_idp_withoutTTV_dict[idp]['SCdose_bcoef']
 
-scd_effect_withTTV_df.to_csv("../../dummy_data/t21_scd_bcoef_effect_withTTV.csv")
-scd_effect_withoutTTV_df.to_csv("../../dummy_data/t21_scd_bcoef_effect_withoutTTV.csv")
+scd_effect_withTTV_df.to_csv("../../data/t21_scd_bcoef_effect_withTTV.csv")
+scd_effect_withoutTTV_df.to_csv("../../data/t21_scd_bcoef_effect_withoutTTV.csv")

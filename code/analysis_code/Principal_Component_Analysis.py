@@ -6,7 +6,7 @@ import random
 from functools import reduce 
 from collections import Counter
 from glob import glob
-sys.path.insert(0, "../../code/analysis_code/")
+sys.path.insert(0, "../../code/utils/")
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt

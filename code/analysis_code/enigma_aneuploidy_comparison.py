@@ -13,7 +13,7 @@ import statsmodels.formula.api as smf
 
 import sys
 import importlib
-sys.path.insert(0, "../../code/analysis_code/")
+sys.path.insert(0, "../../code/utils/")
 
 import utils, spintest_utils, enigma_utils
 importlib.reload(utils)
