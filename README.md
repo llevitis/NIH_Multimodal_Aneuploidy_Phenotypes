@@ -23,4 +23,23 @@ The followings script aggregates the aneuploidy-specific brain region by IDP mat
 
 The following script performs principal component analysis (PCA) on each of the aneuploidy-specific brain region by delta IDP matrices. It compares the feature loadings and principal component scores for the first principal component of each aforementioned matrix (**Fig 3**). Additionally, this script averages the PC1 maps across the aneuploidies to enable identification of a shared spatial axis of multimodal change (**Fig 4a**). Finally, this script contains code to carry out biological annotation of the PC1 maps using a previously defined annotation (**Fig 4c**)
 
-* `/code/analysis_code/Principal_Component_Analysis.py` 
+* `code/analysis_code/Principal_Component_Analysis.py` 
+
+#### Convergent multimodal cortical changes across aneuploidies and links to convergence across behaviorally-defined  disorders 
+
+The following script leverages the [ENIGMA toolbox](https://enigma-toolbox.readthedocs.io/en/latest/) to download morphometric case-control effect size maps across behaviorally defined psychiatric disorders. PCA is then applied to derive a principal cross-disorder morphometric map, and this is compared with the average cross-aneuploidy multimodal map derived in the preceding script. 
+
+* `code/analysis_code/ENIGMA_Aneuploidy_Comparison.py`
+
+#### Gene-category enrichment analysis of the cross-disorder aneuploidy map 
+
+To gain a better understanding of how our average cross-aneuploidy multimodal map may relate to biological processes and cell types, we use several previously published tools - namely, [abagen](https://abagen.readthedocs.io/en/stable/) and [ABAnnotate](https://zenodo.org/record/6463329).  
+
+The following script calls `abagen` to download the Allen Human Brain Atlas and create a gene expression matrix based on the multimodal HCP parcellation. 
+
+* `code/abagen_compute_expression_matrix.py` 
+
+We then use the `ABAnnotate` toolbox to perform ensemble gene-category enrichment analysis (GCEA) using two different gene category annotations.  
+
+* GO Biological Processes: `code/gcea/AneuploidyPC1_analysis_celltypes.m`
+* PsychEncode neuronal cell type markers: `code/gcea/AneuploidyPC1_analysis_celltypes.m`
