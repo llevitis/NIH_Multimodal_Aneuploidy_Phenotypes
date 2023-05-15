@@ -12,6 +12,7 @@ cd NIH_Multimodal_Aneuploidy_Phenotypes
 Create the customised python environment:
 ```bash
 conda env create --file environment.yml
+conda activate multimodal_aneuploidy_proj
 ```
 
 Follow instructions for installing the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA) in a separate directory. 
