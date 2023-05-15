@@ -1,6 +1,26 @@
 ### Description
 This repository contains all the code used for analyses in the following preprint: **"The variegation of human brain vulnerability to rare genetic disorders and convergence with behaviorally defined disorders"** ([preprint](https://www.biorxiv.org/content/10.1101/2022.11.12.516252v1.abstract)). The scripts in `code/analysis_code` are split up thematically and rely on data that is currently stored in a private Git repo. General utility functions put together specifically for these analyses are stored in `code/utils` and are called in the `code/analysis_code` scripts. 
 
+#### Installation
+
+Clone this repository and move to folder:
+```bash
+git clone https://github.com/llevitis/NIH_Multimodal_Aneuploidy_Phenotypes
+cd NIH_Multimodal_Aneuploidy_Phenotypes
+```
+
+Create the customised python environment:
+```bash
+conda env create --file environment.yml
+```
+
+Follow instructions for installing the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA) in a separate directory. 
+```bash
+git clone https://github.com/MICA-MNI/ENIGMA.git
+cd ENIGMA
+python setup.py install
+```
+
 Here is a breakdown of the scripts (in the order in which they're meant to be run, as some scripts rely on data generated in preceding scripts).
 
 #### Computing regional imaging derived phenotype (IDP) changes in each aneuploidy 
