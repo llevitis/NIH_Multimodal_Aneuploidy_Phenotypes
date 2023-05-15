@@ -1,3 +1,3 @@
 [submodule "data"]
 	path = data
-	url = https://github.com/llevitis/NIH_Multimodal_SCA_Phenotypes_Data.git
+	url = https://github.com/llevitis/NIH_Multimodal_Aneuploidy_Phenotypes_Data.git
